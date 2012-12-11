@@ -24,6 +24,14 @@
             </intent-filter>
         </activity>
         
+        <activity
+            android:name=".DimensionDialog"
+            android:label="Dimension" 
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation"
+            android:theme="@android:style/Theme.Holo.Dialog">
+        </activity>
+        
         <activity android:name=".XmlPreviewActivity"></activity>
         
         <uses-library android:name="com.google.android.maps" />
