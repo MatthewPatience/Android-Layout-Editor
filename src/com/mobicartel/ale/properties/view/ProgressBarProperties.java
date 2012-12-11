@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 import com.mobicartel.ale.properties.XmlSerializablePropertyAbsImpl;
+import com.mobicartel.ale.util.InputMethod;
 import com.mobicartel.ale.util.Verifier;
 
 public class ProgressBarProperties extends ViewProperties {
@@ -55,6 +56,11 @@ public class ProgressBarProperties extends ViewProperties {
 		public String getValue() {
 			return value;
 		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return null;
+		}
 	}
 	
 	public class Max extends XmlSerializablePropertyAbsImpl {
@@ -75,6 +81,11 @@ public class ProgressBarProperties extends ViewProperties {
 		}
 		public String getValue() {
 			return value;
+		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return null;
 		}
 	}
 	
@@ -97,6 +108,11 @@ public class ProgressBarProperties extends ViewProperties {
 		public String getValue() {
 			return value;
 		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return null;
+		}
 	}
 	
 	public class SecondaryProgress extends XmlSerializablePropertyAbsImpl {
@@ -117,6 +133,11 @@ public class ProgressBarProperties extends ViewProperties {
 		}
 		public String getValue() {
 			return value;
+		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return null;
 		}
 	}
 

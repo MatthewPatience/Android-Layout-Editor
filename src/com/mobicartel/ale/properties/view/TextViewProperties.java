@@ -6,6 +6,7 @@ import android.widget.TextView;
 import com.mobicartel.ale.properties.XmlSerializablePropertyAbsImpl;
 import com.mobicartel.ale.util.ColorUtils;
 import com.mobicartel.ale.util.Constants;
+import com.mobicartel.ale.util.InputMethod;
 import com.mobicartel.ale.util.Verifier;
 
 public class TextViewProperties extends ViewProperties {
@@ -57,6 +58,11 @@ public class TextViewProperties extends ViewProperties {
 		public String getValue() {
 			return value;
 		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return null;
+		}
 	}
 	
 	public class TextColor extends XmlSerializablePropertyAbsImpl {
@@ -81,6 +87,11 @@ public class TextViewProperties extends ViewProperties {
 		}
 		public String getValue() {
 			return value;
+		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return null;
 		}
 	}
 	
@@ -116,6 +127,11 @@ public class TextViewProperties extends ViewProperties {
 		}
 		public String getValue() {
 			return value;
+		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return null;
 		}
 	}
 	

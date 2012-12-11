@@ -2,6 +2,7 @@ package com.mobicartel.ale.properties.viewgroup;
 
 
 import com.mobicartel.ale.properties.XmlSerializablePropertyAbsImpl;
+import com.mobicartel.ale.util.InputMethod;
 
 import android.view.View;
 import android.widget.LinearLayout;
@@ -55,11 +56,16 @@ public class LinearLayoutParamsProperties extends MarginLayoutParamsProperties {
 					value.equals("center_horizontal") || value.equals("center")) {
 				this.value = value;
 			} else {
-				throw new IllegalArgumentException("value of 'layout_gravity' must end one of 'top', 'bottom', 'right', 'left', 'center_vertical', 'center_horizontal', 'center', ");
+				throw new IllegalArgumentException("value of " + NAME + " must end one of 'top', 'bottom', 'right', 'left', 'center_vertical', 'center_horizontal', 'center', ");
 			}
 		}
 		public String getValue() {
 			return value;
+		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return null;
 		}
 	}
 	
@@ -79,11 +85,16 @@ public class LinearLayoutParamsProperties extends MarginLayoutParamsProperties {
 				Float.parseFloat(value);
 				this.value = value;
 			} catch (NumberFormatException e) {
-				throw new IllegalArgumentException("value of 'layout_weight' must be a float");
+				throw new IllegalArgumentException("value of " + NAME + " must be a float");
 			}
 		}
 		public String getValue() {
 			return value;
+		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return null;
 		}
 	}
 

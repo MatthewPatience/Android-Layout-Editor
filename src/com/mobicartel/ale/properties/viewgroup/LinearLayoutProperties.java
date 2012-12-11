@@ -4,6 +4,7 @@ package com.mobicartel.ale.properties.viewgroup;
 
 import com.mobicartel.ale.properties.XmlSerializablePropertyAbsImpl;
 import com.mobicartel.ale.properties.view.ViewProperties;
+import com.mobicartel.ale.util.InputMethod;
 
 import android.view.View;
 import android.widget.LinearLayout;
@@ -40,11 +41,16 @@ public class LinearLayoutProperties extends ViewProperties {
 			if (value.equals("vertical") || value.equals("horizontal")) {
 				this.value = value;
 			} else {
-				throw new IllegalArgumentException("value of 'orientation' must end either 'vertical' or 'horizontal'");
+				throw new IllegalArgumentException("value of " + NAME + " must end either 'vertical' or 'horizontal'");
 			}
 		}
 		public String getValue() {
 			return value;
+		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return null;
 		}
 	}
 

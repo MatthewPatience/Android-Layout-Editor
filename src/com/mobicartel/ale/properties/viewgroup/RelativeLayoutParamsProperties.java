@@ -1,11 +1,11 @@
 package com.mobicartel.ale.properties.viewgroup;
 
 
-import com.mobicartel.ale.properties.XmlSerializablePropertyAbsImpl;
-
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+
+import com.mobicartel.ale.properties.XmlSerializablePropertyAbsImpl;
+import com.mobicartel.ale.util.InputMethod;
 
 public class RelativeLayoutParamsProperties extends MarginLayoutParamsProperties {
 	
@@ -65,11 +65,16 @@ public class RelativeLayoutParamsProperties extends MarginLayoutParamsProperties
 			if (value.equals("true") || value.equals("false")) {
 				this.value = value;
 			} else {
-				throw new IllegalArgumentException("value of 'layout_alignParentTop' must be one of 'true' or 'false'");
+				throw new IllegalArgumentException("value of " + NAME + " must be one of 'true' or 'false'");
 			}
 		}
 		public String getValue() {
 			return value;
+		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return null;
 		}
 	}
 	
@@ -92,11 +97,16 @@ public class RelativeLayoutParamsProperties extends MarginLayoutParamsProperties
 			if (value.equals("true") || value.equals("false")) {
 				this.value = value;
 			} else {
-				throw new IllegalArgumentException("value of 'layout_alignParentLeft' must be one of 'true' or 'false'");
+				throw new IllegalArgumentException("value of " + NAME + " must be one of 'true' or 'false'");
 			}
 		}
 		public String getValue() {
 			return value;
+		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return null;
 		}
 	}
 	
@@ -119,11 +129,16 @@ public class RelativeLayoutParamsProperties extends MarginLayoutParamsProperties
 			if (value.equals("true") || value.equals("false")) {
 				this.value = value;
 			} else {
-				throw new IllegalArgumentException("value of 'layout_alignParentBottom' must be one of 'true' or 'false'");
+				throw new IllegalArgumentException("value of " + NAME + " must be one of 'true' or 'false'");
 			}
 		}
 		public String getValue() {
 			return value;
+		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return null;
 		}
 	}
 	
@@ -146,11 +161,16 @@ public class RelativeLayoutParamsProperties extends MarginLayoutParamsProperties
 			if (value.equals("true") || value.equals("false")) {
 				this.value = value;
 			} else {
-				throw new IllegalArgumentException("value of 'layout_alignParentRight' must be one of 'true' or 'false'");
+				throw new IllegalArgumentException("value of " + NAME + " must be one of 'true' or 'false'");
 			}
 		}
 		public String getValue() {
 			return value;
+		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return null;
 		}
 	}
 	
@@ -173,11 +193,16 @@ public class RelativeLayoutParamsProperties extends MarginLayoutParamsProperties
 			if (value.equals("true") || value.equals("false")) {
 				this.value = value;
 			} else {
-				throw new IllegalArgumentException("value of 'layout_centerHorizontal' must be one of 'true' or 'false'");
+				throw new IllegalArgumentException("value of " + NAME + " must be one of 'true' or 'false'");
 			}
 		}
 		public String getValue() {
 			return value;
+		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return null;
 		}
 	}
 	
@@ -200,11 +225,16 @@ public class RelativeLayoutParamsProperties extends MarginLayoutParamsProperties
 			if (value.equals("true") || value.equals("false")) {
 				this.value = value;
 			} else {
-				throw new IllegalArgumentException("value of 'layout_centerVertical' must be one of 'true' or 'false'");
+				throw new IllegalArgumentException("value of " + NAME + " must be one of 'true' or 'false'");
 			}
 		}
 		public String getValue() {
 			return value;
+		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return null;
 		}
 	}
 	
@@ -227,11 +257,16 @@ public class RelativeLayoutParamsProperties extends MarginLayoutParamsProperties
 			if (value.equals("true") || value.equals("false")) {
 				this.value = value;
 			} else {
-				throw new IllegalArgumentException("value of 'layout_centerInParent' must be one of 'true' or 'false'");
+				throw new IllegalArgumentException("value of " + NAME + " must be one of 'true' or 'false'");
 			}
 		}
 		public String getValue() {
 			return value;
+		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return null;
 		}
 	}
 

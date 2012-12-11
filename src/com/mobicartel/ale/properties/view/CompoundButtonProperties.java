@@ -5,6 +5,7 @@ import android.widget.CompoundButton;
 
 import com.mobicartel.ale.properties.XmlSerializablePropertyAbsImpl;
 import com.mobicartel.ale.util.Constants;
+import com.mobicartel.ale.util.InputMethod;
 import com.mobicartel.ale.util.Verifier;
 
 public class CompoundButtonProperties extends ViewProperties {
@@ -48,6 +49,11 @@ public class CompoundButtonProperties extends ViewProperties {
 		public String getValue() {
 			return value;
 		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return null;
+		}
 	}
 	
 	public class Button extends XmlSerializablePropertyAbsImpl {
@@ -71,6 +77,11 @@ public class CompoundButtonProperties extends ViewProperties {
 		}
 		public String getValue() {
 			return value;
+		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return null;
 		}
 	}
 

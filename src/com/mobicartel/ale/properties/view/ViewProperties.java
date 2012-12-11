@@ -10,6 +10,7 @@ import com.mobicartel.ale.properties.XmlSerializablePropertyAbsImpl;
 import com.mobicartel.ale.util.ColorUtils;
 import com.mobicartel.ale.util.Constants;
 import com.mobicartel.ale.util.DimensionUtils;
+import com.mobicartel.ale.util.InputMethod;
 import com.mobicartel.ale.util.Verifier;
 
 public class ViewProperties {
@@ -81,6 +82,11 @@ public class ViewProperties {
 		public String getValue() {
 			return value;
 		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return null;
+		}
 	}
 	
 	public class Id extends XmlSerializablePropertyAbsImpl {
@@ -103,6 +109,11 @@ public class ViewProperties {
 		}
 		public String getValue() {
 			return value;
+		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return null;
 		}
 	}
 	
@@ -133,6 +144,11 @@ public class ViewProperties {
 		public String getValue() {
 			return value;
 		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return InputMethod.DIMENSION;
+		}
 	}
 	
 	public class PaddingLeft extends XmlSerializablePropertyAbsImpl {
@@ -161,6 +177,11 @@ public class ViewProperties {
 		}
 		public String getValue() {
 			return value;
+		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return InputMethod.DIMENSION;
 		}
 	}
 	
@@ -191,6 +212,11 @@ public class ViewProperties {
 		public String getValue() {
 			return value;
 		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return InputMethod.DIMENSION;
+		}
 	}
 	
 	public class PaddingRight extends XmlSerializablePropertyAbsImpl {
@@ -219,6 +245,11 @@ public class ViewProperties {
 		}
 		public String getValue() {
 			return value;
+		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return InputMethod.DIMENSION;
 		}
 	}
 	
@@ -249,6 +280,11 @@ public class ViewProperties {
 		}
 		public String getValue() {
 			return value;
+		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return InputMethod.DIMENSION;
 		}
 	}
 

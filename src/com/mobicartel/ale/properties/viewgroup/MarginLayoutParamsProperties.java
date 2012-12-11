@@ -8,6 +8,7 @@ import com.mobicartel.ale.MainActivity;
 import com.mobicartel.ale.properties.XmlSerializablePropertyAbsImpl;
 import com.mobicartel.ale.util.Constants;
 import com.mobicartel.ale.util.DimensionUtils;
+import com.mobicartel.ale.util.InputMethod;
 
 public class MarginLayoutParamsProperties extends LayoutParamsProperties {
 	
@@ -67,6 +68,11 @@ public class MarginLayoutParamsProperties extends LayoutParamsProperties {
 		public String getValue() {
 			return value;
 		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return InputMethod.DIMENSION;
+		}
 	}
 	
 	public class MarginLeft extends XmlSerializablePropertyAbsImpl {
@@ -100,6 +106,11 @@ public class MarginLayoutParamsProperties extends LayoutParamsProperties {
 		}
 		public String getValue() {
 			return value;
+		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return InputMethod.DIMENSION;
 		}
 	}
 	
@@ -135,6 +146,11 @@ public class MarginLayoutParamsProperties extends LayoutParamsProperties {
 		public String getValue() {
 			return value;
 		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return InputMethod.DIMENSION;
+		}
 	}
 	
 	public class MarginRight extends XmlSerializablePropertyAbsImpl {
@@ -168,6 +184,11 @@ public class MarginLayoutParamsProperties extends LayoutParamsProperties {
 		}
 		public String getValue() {
 			return value;
+		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return InputMethod.DIMENSION;
 		}
 	}
 

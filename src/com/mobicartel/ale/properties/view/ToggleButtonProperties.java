@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.ToggleButton;
 
 import com.mobicartel.ale.properties.XmlSerializablePropertyAbsImpl;
+import com.mobicartel.ale.util.InputMethod;
 import com.mobicartel.ale.util.Verifier;
 
 public class ToggleButtonProperties extends CompoundButtonProperties {
@@ -49,6 +50,11 @@ public class ToggleButtonProperties extends CompoundButtonProperties {
 		public String getValue() {
 			return value;
 		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return null;
+		}
 	}
 	
 	public class TextOn extends XmlSerializablePropertyAbsImpl {
@@ -75,6 +81,11 @@ public class ToggleButtonProperties extends CompoundButtonProperties {
 		}
 		public String getValue() {
 			return value;
+		}
+		@Override
+		public InputMethod getInputMethod() {
+			
+			return null;
 		}
 	}
 
