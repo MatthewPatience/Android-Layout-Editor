@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/layout_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="1px"
+            android:layout_height="1px"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/btn_outline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/view1"
+            android:text="Outline" />
+
+        <Button
+            android:id="@+id/btn_properties"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/view1"
+            android:text="Properties" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/btn_outline"
+            android:background="#ffffff" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="#ffffff" />
+    </RelativeLayout>
+
+    <ViewSwitcher
+        android:id="@+id/flipper_properties"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/layout_tabs" >
+
+        <ScrollView
+            android:id="@+id/scrollview_outline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:id="@+id/layout_outline"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/layout_properties"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/listview_props"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+            </ListView>
+        </LinearLayout>
+    </ViewSwitcher>
+
+</RelativeLayout>
