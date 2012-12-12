@@ -200,6 +200,20 @@
             android:layout_weight="1"
             android:text="Done" />
 
+        <Button
+            android:id="@+id/btn_match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Match Parent" />
+
+        <Button
+            android:id="@+id/btn_wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Wrap Content" />
+
     </LinearLayout>
 
 </LinearLayout>

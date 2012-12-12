@@ -9,12 +9,12 @@ public enum DeviceConfig {
 	GALAXY_NEXUS(Density.XHDPI, 720, 1280, Configuration.ORIENTATION_PORTRAIT, "Galaxy Nexus");
 	
 	private Density density;
-	private int screen_width;
-	private int screen_height;
+	private float screen_width;
+	private float screen_height;
 	private int orientation;
 	private String name;
 	
-	DeviceConfig(Density density, int screen_width, int screen_height, int orientation, String name) {
+	DeviceConfig(Density density, float screen_width, float screen_height, int orientation, String name) {
 		
 		this.density = density;
 		this.screen_width = screen_width;
@@ -31,16 +31,16 @@ public enum DeviceConfig {
 	public void setDensity(Density density) {
 		this.density = density;
 	}
-	public int getScreenWidth() {
+	public float getScreenWidth() {
 		return screen_width;
 	}
-	public void setScreenWidth(int screen_width) {
+	public void setScreenWidth(float screen_width) {
 		this.screen_width = screen_width;
 	}
-	public int getScreenHeight() {
+	public float getScreenHeight() {
 		return screen_height;
 	}
-	public void setScreenHeight(int screen_height) {
+	public void setScreenHeight(float screen_height) {
 		this.screen_height = screen_height;
 	}
 	public int getOrientation() {

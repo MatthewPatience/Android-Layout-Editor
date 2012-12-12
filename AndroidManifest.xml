@@ -25,7 +25,7 @@
         </activity>
         
         <activity
-            android:name=".DimensionDialog"
+            android:name="com.mobicartel.ale.WidthHeightDialog"
             android:label="Dimension" 
             android:screenOrientation="landscape"
             android:configChanges="keyboardHidden|orientation"
