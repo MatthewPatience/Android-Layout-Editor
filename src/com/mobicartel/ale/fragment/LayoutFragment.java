@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,9 +57,10 @@ public class LayoutFragment extends Fragment implements OnDragListener, OnClickL
 	
 	public void setDeviceConfig(final DeviceConfig config) {
 		
-		int new_width = (int) (config.getScreenWidth() / config.getDensity().conversion);
-		int new_height = (int) (config.getScreenHeight() / config.getDensity().conversion);
 		DisplayMetrics metrics = getActivity().getResources().getDisplayMetrics();
+		float conversion = config.getDensity().conversion - (metrics.density - 1);
+		int new_width = (int) (config.getScreenWidth() / conversion);
+		int new_height = (int) (config.getScreenHeight() / conversion);
 		layout_bg.getLayoutParams().width = new_width;
 		layout_bg.getLayoutParams().height = new_height;
 		layout_bg.invalidate();
