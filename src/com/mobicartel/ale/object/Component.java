@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 import com.mobicartel.ale.constants.ParentType;
 import com.mobicartel.ale.constants.ViewType;
+import com.mobicartel.ale.properties.params.LayoutParamsProperties;
 import com.mobicartel.ale.properties.view.ViewProperties;
-import com.mobicartel.ale.properties.viewgroup.LayoutParamsProperties;
 
 import android.view.View;
 import android.view.ViewGroup;

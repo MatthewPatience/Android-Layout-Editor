@@ -1,15 +1,13 @@
-package com.mobicartel.ale.properties.viewgroup;
+package com.mobicartel.ale.properties.params;
 
 import java.util.ArrayList;
 
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 
-import com.mobicartel.ale.MainActivity;
 import com.mobicartel.ale.properties.XmlSerializableProperty;
 import com.mobicartel.ale.properties.XmlSerializablePropertyAbsImpl;
 import com.mobicartel.ale.util.Constants;
-import com.mobicartel.ale.util.DimensionUtils;
 import com.mobicartel.ale.util.InputMethod;
 
 public class LayoutParamsProperties {
@@ -46,9 +44,9 @@ public class LayoutParamsProperties {
 			if (params == null) params = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 			try {
 				if (value.endsWith(Constants.UNIT_DIP)) {
-					params.width = DimensionUtils.convertToDensity(MainActivity.device_config.getDensity(), Integer.valueOf(value.replace(Constants.UNIT_DIP, "")));
+					params.width = Integer.valueOf(value.replace(Constants.UNIT_DIP, ""));
 				} else if (value.endsWith(Constants.UNIT_DP)) {
-					params.width = DimensionUtils.convertToDensity(MainActivity.device_config.getDensity(), Integer.valueOf(value.replace(Constants.UNIT_DP, "")));
+					params.width = Integer.valueOf(value.replace(Constants.UNIT_DP, ""));
 				} else if (value.endsWith(Constants.UNIT_PX)) {
 					params.width = Integer.valueOf(value.replace(Constants.UNIT_PX, ""));
 				} else if (value.equals("wrap_content")) {
@@ -94,9 +92,9 @@ public class LayoutParamsProperties {
 			if (params == null) params = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 			try {
 				if (value.endsWith(Constants.UNIT_DIP)) {
-					params.height = DimensionUtils.convertToDensity(MainActivity.device_config.getDensity(), Integer.valueOf(value.replace(Constants.UNIT_DIP, "")));
+					params.height = Integer.valueOf(value.replace(Constants.UNIT_DIP, ""));
 				} else if (value.endsWith(Constants.UNIT_DP)) {
-					params.height = DimensionUtils.convertToDensity(MainActivity.device_config.getDensity(), Integer.valueOf(value.replace(Constants.UNIT_DP, "")));
+					params.height = Integer.valueOf(value.replace(Constants.UNIT_DP, ""));
 				} else if (value.endsWith(Constants.UNIT_PX)) {
 					params.height = Integer.valueOf(value.replace(Constants.UNIT_PX, ""));
 				} else if (value.equals("wrap_content")) {

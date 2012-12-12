@@ -14,11 +14,11 @@ import android.widget.ToggleButton;
 
 import com.mobicartel.ale.object.Component;
 import com.mobicartel.ale.properties.view.ButtonProperties;
+import com.mobicartel.ale.properties.view.LinearLayoutProperties;
 import com.mobicartel.ale.properties.view.ProgressBarProperties;
 import com.mobicartel.ale.properties.view.TextViewProperties;
 import com.mobicartel.ale.properties.view.ToggleButtonProperties;
 import com.mobicartel.ale.properties.view.ViewProperties;
-import com.mobicartel.ale.properties.viewgroup.LinearLayoutProperties;
 import com.mobicartel.ale.util.DefaultComponentCreator;
 
 public enum ViewType {

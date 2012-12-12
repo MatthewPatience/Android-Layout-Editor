@@ -10,21 +10,16 @@
         android:id="@+id/txt_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Property" android:layout_marginLeft="5dip" android:layout_marginRight="5dip"/>
-
-    <EditText
-        android:id="@+id/txtbox_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" android:inputType="text">
-
-        <requestFocus />
-    </EditText>
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_weight="1"
+        android:text="Property"
+        android:textSize="18sp" />
 
     <Button
-        android:id="@+id/btn_save"
+        android:id="@+id/btn_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save" />
+        android:text="EDIT" />
 
 </LinearLayout>

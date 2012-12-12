@@ -4,12 +4,10 @@ import java.util.ArrayList;
 
 import android.view.View;
 
-import com.mobicartel.ale.MainActivity;
 import com.mobicartel.ale.properties.XmlSerializableProperty;
 import com.mobicartel.ale.properties.XmlSerializablePropertyAbsImpl;
 import com.mobicartel.ale.util.ColorUtils;
 import com.mobicartel.ale.util.Constants;
-import com.mobicartel.ale.util.DimensionUtils;
 import com.mobicartel.ale.util.InputMethod;
 import com.mobicartel.ale.util.Verifier;
 
@@ -125,11 +123,11 @@ public class ViewProperties {
 		}
 		public void updateView(View view) throws NullPointerException {
 			if (value.endsWith(Constants.UNIT_DIP)) {
-				int size = DimensionUtils.convertToDensity(MainActivity.device_config.getDensity(), Integer.valueOf(value.replace(Constants.UNIT_DIP, "")));
-				view.setPadding(view.getPaddingLeft(), size, view.getPaddingRight(), view.getPaddingBottom());
+				int padding = Integer.valueOf(value.replace(Constants.UNIT_DIP, ""));
+				view.setPadding(view.getPaddingLeft(), padding, view.getPaddingRight(), view.getPaddingBottom());
 			} else if (value.endsWith(Constants.UNIT_DP)) {
-				int size = DimensionUtils.convertToDensity(MainActivity.device_config.getDensity(), Integer.valueOf(value.replace(Constants.UNIT_DP, "")));
-				view.setPadding(view.getPaddingLeft(), size, view.getPaddingRight(), view.getPaddingBottom());
+				int padding = Integer.valueOf(value.replace(Constants.UNIT_DP, ""));
+				view.setPadding(view.getPaddingLeft(), padding, view.getPaddingRight(), view.getPaddingBottom());
 			} else if (value.endsWith(Constants.UNIT_PX)) {
 				view.setPadding(view.getPaddingLeft(), Integer.valueOf(value.replace(Constants.UNIT_PX, "")), view.getPaddingRight(), view.getPaddingBottom());
 			}
@@ -159,11 +157,11 @@ public class ViewProperties {
 		}
 		public void updateView(View view) throws NullPointerException {
 			if (value.endsWith(Constants.UNIT_DIP)) {
-				int size = DimensionUtils.convertToDensity(MainActivity.device_config.getDensity(), Integer.valueOf(value.replace(Constants.UNIT_DIP, "")));
-				view.setPadding(size, view.getPaddingTop(), view.getPaddingRight(), view.getPaddingBottom());
+				int padding = Integer.valueOf(value.replace(Constants.UNIT_DIP, ""));
+				view.setPadding(padding, view.getPaddingTop(), view.getPaddingRight(), view.getPaddingBottom());
 			} else if (value.endsWith(Constants.UNIT_DP)) {
-				int size = DimensionUtils.convertToDensity(MainActivity.device_config.getDensity(), Integer.valueOf(value.replace(Constants.UNIT_DP, "")));
-				view.setPadding(size, view.getPaddingTop(), view.getPaddingRight(), view.getPaddingBottom());
+				int padding = Integer.valueOf(value.replace(Constants.UNIT_DP, ""));
+				view.setPadding(padding, view.getPaddingTop(), view.getPaddingRight(), view.getPaddingBottom());
 			} else if (value.endsWith(Constants.UNIT_PX)) {
 				view.setPadding(Integer.valueOf(value.replace(Constants.UNIT_PX, "")), view.getPaddingTop(), view.getPaddingRight(), view.getPaddingBottom());
 			}
@@ -193,11 +191,11 @@ public class ViewProperties {
 		}
 		public void updateView(View view) throws NullPointerException {
 			if (value.endsWith(Constants.UNIT_DIP)) {
-				int size = DimensionUtils.convertToDensity(MainActivity.device_config.getDensity(), Integer.valueOf(value.replace(Constants.UNIT_DIP, "")));
-				view.setPadding(view.getPaddingLeft(), view.getPaddingTop(), view.getPaddingRight(), size);
+				int padding = Integer.valueOf(value.replace(Constants.UNIT_DIP, ""));
+				view.setPadding(view.getPaddingLeft(), view.getPaddingTop(), view.getPaddingRight(), padding);
 			} else if (value.endsWith(Constants.UNIT_DP)) {
-				int size = DimensionUtils.convertToDensity(MainActivity.device_config.getDensity(), Integer.valueOf(value.replace(Constants.UNIT_DP, "")));
-				view.setPadding(view.getPaddingLeft(), view.getPaddingTop(), view.getPaddingRight(), size);
+				int padding = Integer.valueOf(value.replace(Constants.UNIT_DP, ""));
+				view.setPadding(view.getPaddingLeft(), view.getPaddingTop(), view.getPaddingRight(), padding);
 			} else if (value.endsWith(Constants.UNIT_PX)) {
 				view.setPadding(view.getPaddingLeft(), view.getPaddingTop(), view.getPaddingRight(), Integer.valueOf(value.replace(Constants.UNIT_PX, "")));
 			}
@@ -227,11 +225,11 @@ public class ViewProperties {
 		}
 		public void updateView(View view) throws NullPointerException {
 			if (value.endsWith(Constants.UNIT_DIP)) {
-				int size = DimensionUtils.convertToDensity(MainActivity.device_config.getDensity(), Integer.valueOf(value.replace(Constants.UNIT_DIP, "")));
-				view.setPadding(view.getPaddingLeft(), view.getPaddingTop(), size, view.getPaddingBottom());
+				int padding = Integer.valueOf(value.replace(Constants.UNIT_DIP, ""));
+				view.setPadding(view.getPaddingLeft(), view.getPaddingTop(), padding, view.getPaddingBottom());
 			} else if (value.endsWith(Constants.UNIT_DP)) {
-				int size = DimensionUtils.convertToDensity(MainActivity.device_config.getDensity(), Integer.valueOf(value.replace(Constants.UNIT_DP, "")));
-				view.setPadding(view.getPaddingLeft(), view.getPaddingTop(), size, view.getPaddingBottom());
+				int padding = Integer.valueOf(value.replace(Constants.UNIT_DP, ""));
+				view.setPadding(view.getPaddingLeft(), view.getPaddingTop(), padding, view.getPaddingBottom());
 			} else if (value.endsWith(Constants.UNIT_PX)) {
 				view.setPadding(view.getPaddingLeft(), view.getPaddingTop(), Integer.valueOf(value.replace(Constants.UNIT_PX, "")), view.getPaddingBottom());
 			}
@@ -261,10 +259,10 @@ public class ViewProperties {
 		}
 		public void updateView(View view) throws NullPointerException {
 			if (value.endsWith(Constants.UNIT_DIP)) {
-				int padding = DimensionUtils.convertToDensity(MainActivity.device_config.getDensity(), Integer.valueOf(value.replace(Constants.UNIT_DIP, "")));
+				int padding = Integer.valueOf(value.replace(Constants.UNIT_DIP, ""));
 				view.setPadding(padding, padding, padding, padding);
 			} else if (value.endsWith(Constants.UNIT_DP)) {
-				int padding = DimensionUtils.convertToDensity(MainActivity.device_config.getDensity(), Integer.valueOf(value.replace(Constants.UNIT_DP, "")));
+				int padding = Integer.valueOf(value.replace(Constants.UNIT_DP, ""));
 				view.setPadding(padding, padding, padding, padding);
 			} else if (value.endsWith(Constants.UNIT_PX)) {
 				int padding = Integer.valueOf(value.replace(Constants.UNIT_PX, ""));

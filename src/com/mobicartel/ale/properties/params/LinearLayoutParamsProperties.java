@@ -1,4 +1,4 @@
-package com.mobicartel.ale.properties.viewgroup;
+package com.mobicartel.ale.properties.params;
 
 
 import com.mobicartel.ale.properties.XmlSerializablePropertyAbsImpl;

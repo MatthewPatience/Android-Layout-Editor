@@ -1,14 +1,15 @@
 package com.mobicartel.ale.util;
 
-import com.mobicartel.ale.DimensionActivity;
+import com.mobicartel.ale.BasePropertyEditDialog;
+import com.mobicartel.ale.DimensionDialog;
 
 public enum InputMethod {
 	
-	DIMENSION(DimensionActivity.class);
+	DIMENSION(DimensionDialog.class);
 	
-	public Class<?> clazz;
+	public Class<? extends BasePropertyEditDialog> clazz;
 	
-	InputMethod(Class<?> clazz) {
+	InputMethod(Class<? extends BasePropertyEditDialog> clazz) {
 		
 		this.clazz = clazz;
 		

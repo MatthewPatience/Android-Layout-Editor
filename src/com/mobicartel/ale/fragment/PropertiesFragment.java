@@ -21,6 +21,7 @@ import com.mobicartel.ale.MainActivity;
 import com.mobicartel.ale.R;
 import com.mobicartel.ale.adapter.PropertiesAdapter;
 import com.mobicartel.ale.object.Component;
+import com.mobicartel.ale.object.DeviceConfig;
 import com.mobicartel.ale.object.HeaderListCollection;
 
 public class PropertiesFragment extends Fragment implements OnClickListener {

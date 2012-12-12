@@ -7,14 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mobicartel.ale.BasePropertyEditDialog;
 import com.mobicartel.ale.R;
 import com.mobicartel.ale.object.Component;
 import com.mobicartel.ale.object.HeaderListCollection;
 import com.mobicartel.ale.properties.XmlSerializableProperty;
+import com.mobicartel.ale.util.InputMethod;
 
 public class PropertiesAdapter extends AbsHeaderListAdapter {
 	
@@ -36,32 +37,17 @@ public class PropertiesAdapter extends AbsHeaderListAdapter {
 		
 		View view = inflater.inflate(R.layout.item_row_property, null);
 		
-		
 		final XmlSerializableProperty property = (XmlSerializableProperty) object;
 		
 		TextView txt_name = (TextView) view.findViewById(R.id.txt_name);
 		txt_name.setText(property.getName());
 		
-		final EditText txtbox_value = (EditText) view.findViewById(R.id.txtbox_value);
-		txtbox_value.setText(property.getValue());
-		
-		Button btn_save = (Button) view.findViewById(R.id.btn_save);
-		btn_save.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				try {
-					property.setValue(txtbox_value.getText().toString());
-					property.updateView(component.getView());
-					component.getView().invalidate();
-				} catch (IllegalArgumentException e) {
-					if (e.getMessage() != null) {
-						Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
-					} else {
-						Toast.makeText(context, "Invalid Property", Toast.LENGTH_SHORT).show();
-					}
-				} catch (NullPointerException e) {
-					e.printStackTrace();
-					Toast.makeText(context, "An Error Occured", Toast.LENGTH_SHORT).show();
-				}
+		Button btn_edit = (Button) view.findViewById(R.id.btn_edit);
+		btn_edit.setOnClickListener(new OnClickListener() {
+			public void onClick(View view) {
+				
+				displayEditDialog(property.getInputMethod(), property);
+				
 			}
 		});
 		
@@ -83,6 +69,24 @@ public class PropertiesAdapter extends AbsHeaderListAdapter {
 	public void updateComponent(Component component) {
 		
 		this.component = component;
+		
+	}
+	
+	private void displayEditDialog(InputMethod input, XmlSerializableProperty property) {
+		
+		if (input == null) {
+			Toast.makeText(context, "No editor input method available for this property", Toast.LENGTH_SHORT).show();
+			return;
+		}
+		
+		try {
+			BasePropertyEditDialog dialog = input.clazz.getConstructor(Context.class, XmlSerializableProperty.class, Component.class)
+					.newInstance(context, property, component);
+			dialog.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Toast.makeText(context, "An error occured while trying to open the editor, please let the developer know", Toast.LENGTH_LONG).show();
+		}
 		
 	}
 

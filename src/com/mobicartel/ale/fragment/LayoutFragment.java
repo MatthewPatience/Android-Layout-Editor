@@ -23,7 +23,8 @@ import com.mobicartel.ale.MainActivity;
 import com.mobicartel.ale.R;
 import com.mobicartel.ale.constants.ViewType;
 import com.mobicartel.ale.object.Component;
-import com.mobicartel.ale.properties.viewgroup.LinearLayoutProperties;
+import com.mobicartel.ale.object.DeviceConfig;
+import com.mobicartel.ale.properties.view.LinearLayoutProperties;
 
 public class LayoutFragment extends Fragment implements OnDragListener, OnClickListener {
 	
@@ -51,6 +52,16 @@ public class LayoutFragment extends Fragment implements OnDragListener, OnClickL
 		
         return view;
     }
+	
+	public void setDeviceConfig(final DeviceConfig config) {
+		
+		int new_width = (int) (config.getScreenWidth() / config.getDensity().conversion);
+		int new_height = (int) (config.getScreenHeight() / config.getDensity().conversion);
+		layout_bg.getLayoutParams().width = new_width;
+		layout_bg.getLayoutParams().height = new_height;
+		layout_bg.invalidate();
+		
+	}
 	
 	public void setBaseLayout(Component new_root) {
 		

@@ -9,9 +9,9 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.mobicartel.ale.properties.viewgroup.LayoutParamsProperties;
-import com.mobicartel.ale.properties.viewgroup.LinearLayoutParamsProperties;
-import com.mobicartel.ale.properties.viewgroup.RelativeLayoutParamsProperties;
+import com.mobicartel.ale.properties.params.LayoutParamsProperties;
+import com.mobicartel.ale.properties.params.LinearLayoutParamsProperties;
+import com.mobicartel.ale.properties.params.RelativeLayoutParamsProperties;
 
 public enum ParentType {
 

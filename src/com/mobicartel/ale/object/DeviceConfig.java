@@ -1,27 +1,26 @@
 package com.mobicartel.ale.object;
 
+import android.content.res.Configuration;
+
 import com.mobicartel.ale.util.DimensionUtils.Density;
 
-public class DeviceConfig {
+public enum DeviceConfig {
 	
-	public static final int PORTRAIT = 0;
-	public static final int LANDSCAPE = 1;
+	GALAXY_NEXUS(Density.XHDPI, 720, 1280, Configuration.ORIENTATION_PORTRAIT, "Galaxy Nexus");
 	
 	private Density density;
 	private int screen_width;
 	private int screen_height;
 	private int orientation;
+	private String name;
 	
-	public DeviceConfig() {
-		
-	}
-	
-	public DeviceConfig(Density density, int screen_width, int screen_height, int orientation) {
+	DeviceConfig(Density density, int screen_width, int screen_height, int orientation, String name) {
 		
 		this.density = density;
 		this.screen_width = screen_width;
 		this.screen_height = screen_height;
 		this.orientation = orientation;
+		this.name = name;
 		
 	}
 	
@@ -49,6 +48,12 @@ public class DeviceConfig {
 	}
 	public void setOrientation(int orientation) {
 		this.orientation = orientation;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

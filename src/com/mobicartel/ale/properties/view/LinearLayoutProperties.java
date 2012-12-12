@@ -1,9 +1,8 @@
-package com.mobicartel.ale.properties.viewgroup;
+package com.mobicartel.ale.properties.view;
 
 
 
 import com.mobicartel.ale.properties.XmlSerializablePropertyAbsImpl;
-import com.mobicartel.ale.properties.view.ViewProperties;
 import com.mobicartel.ale.util.InputMethod;
 
 import android.view.View;

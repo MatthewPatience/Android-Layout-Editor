@@ -7,12 +7,14 @@ import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -24,11 +26,11 @@ import com.mobicartel.ale.fragment.LayoutFragment;
 import com.mobicartel.ale.fragment.PropertiesFragment;
 import com.mobicartel.ale.object.Component;
 import com.mobicartel.ale.object.DeviceConfig;
-import com.mobicartel.ale.util.DimensionUtils.Density;
+import com.mobicartel.ale.util.Constants;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements OnItemSelectedListener {
 	
-	public static DeviceConfig device_config;
+	private DeviceConfig[] arr_devices;
 	
 	public InventoryFragment fragment_inventory;
 	public LayoutFragment fragment_layout;
@@ -44,21 +46,22 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     
-        setUpActionBar();
-        
         init();
+        
+        setUpActionBar();
     
     }
     
     private void setUpActionBar() {
     	
+    	setUpDeviceConfigs();
+    	Constants.device_config = arr_devices[0];
+		fragment_layout.setDeviceConfig(Constants.device_config);
+    	
     	LinearLayout layout_bg = new LinearLayout(this);
     	layout_bg.setOrientation(LinearLayout.HORIZONTAL);
     	ActionBar.LayoutParams customview_params = new ActionBar.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
     	customview_params.leftMargin = 30;
-    	
-    	spinner_devices = new Spinner(this);
-    	spinner_devices.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, new String[] { "Galaxy Nexus", "Nexus One", "ADP1", "Samsung Galaxy Tab" }));
     	
     	txtbox_filename = new EditText(this);
     	txtbox_filename.setHint("File Name...");
@@ -77,20 +80,25 @@ public class MainActivity extends Activity {
     	
     }
     
+    private void setUpDeviceConfigs() {
+    	
+    	spinner_devices = new Spinner(this);
+    	arr_devices = DeviceConfig.values();
+    	String[] arr_device_names = new String[arr_devices.length];
+    	for (int i = 0; i < arr_devices.length; i++) {
+    		arr_device_names[i] = arr_devices[i].getName();
+    	}
+    	spinner_devices.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, arr_device_names));
+    	spinner_devices.setOnItemSelectedListener(this);
+    	
+    }
+    
     private void init() {
-    	
-    	DisplayMetrics metrics = new DisplayMetrics();
-    	getWindowManager().getDefaultDisplay().getMetrics(metrics);
-    	device_config = new DeviceConfig(Density.HDPI, metrics.widthPixels, metrics.heightPixels, DeviceConfig.PORTRAIT);
-    	
     	
     	FragmentManager fragment_manager = getFragmentManager();
 
-        
         fragment_inventory = (InventoryFragment) fragment_manager.findFragmentById(R.id.inventory);
-        
-        fragment_layout = (LayoutFragment) fragment_manager.findFragmentById(R.id.layout);
-        
+        fragment_layout = (LayoutFragment) fragment_manager.findFragmentById(R.id.layout);        
         fragment_properties = (PropertiesFragment) fragment_manager.findFragmentById(R.id.properties);
         
         fragment_properties.updateOutline();
@@ -148,5 +156,18 @@ public class MainActivity extends Activity {
     	dialog.show();
     	
     }
+
+	@Override
+	public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+		
+		Constants.device_config = arr_devices[position];
+		fragment_layout.setDeviceConfig(Constants.device_config);
+		
+	}
+
+	@Override
+	public void onNothingSelected(AdapterView<?> parent) {
+		
+	}
     
 }

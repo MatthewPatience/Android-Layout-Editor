@@ -1,5 +1,7 @@
 package com.mobicartel.ale.util;
 
+import com.mobicartel.ale.object.DeviceConfig;
+
 public class Constants {
 
 	public static final String TYPE_DRAWABLE = "drawable";
@@ -12,5 +14,7 @@ public class Constants {
 	public static final String UNIT_DP = "dp";
 	public static final String UNIT_PX = "px";
 	public static final String UNIT_SP = "sp";
+	
+	public static DeviceConfig device_config;
 	
 }

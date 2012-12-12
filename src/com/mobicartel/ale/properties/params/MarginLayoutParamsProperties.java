@@ -1,13 +1,11 @@
-package com.mobicartel.ale.properties.viewgroup;
+package com.mobicartel.ale.properties.params;
 
 
 import android.view.View;
 import android.view.ViewGroup.MarginLayoutParams;
 
-import com.mobicartel.ale.MainActivity;
 import com.mobicartel.ale.properties.XmlSerializablePropertyAbsImpl;
 import com.mobicartel.ale.util.Constants;
-import com.mobicartel.ale.util.DimensionUtils;
 import com.mobicartel.ale.util.InputMethod;
 
 public class MarginLayoutParamsProperties extends LayoutParamsProperties {
@@ -46,9 +44,9 @@ public class MarginLayoutParamsProperties extends LayoutParamsProperties {
 			MarginLayoutParams params = (MarginLayoutParams) view.getLayoutParams();
 			try {
 				if (value.endsWith(Constants.UNIT_DIP)) {
-					params.topMargin = DimensionUtils.convertToDensity(MainActivity.device_config.getDensity(), Integer.valueOf(value.replace(Constants.UNIT_DIP, "")));
+					params.topMargin = Integer.valueOf(value.replace(Constants.UNIT_DIP, ""));
 				} else if (value.endsWith(Constants.UNIT_DP)) {
-					params.topMargin = DimensionUtils.convertToDensity(MainActivity.device_config.getDensity(), Integer.valueOf(value.replace(Constants.UNIT_DP, "")));
+					params.topMargin = Integer.valueOf(value.replace(Constants.UNIT_DP, ""));
 				} else if (value.endsWith(Constants.UNIT_PX)) {
 					params.topMargin = Integer.valueOf(value.replace(Constants.UNIT_PX, ""));
 				}
@@ -85,9 +83,9 @@ public class MarginLayoutParamsProperties extends LayoutParamsProperties {
 			MarginLayoutParams params = (MarginLayoutParams) view.getLayoutParams();
 			try {
 				if (value.endsWith(Constants.UNIT_DIP)) {
-					params.leftMargin = DimensionUtils.convertToDensity(MainActivity.device_config.getDensity(), Integer.valueOf(value.replace(Constants.UNIT_DIP, "")));
+					params.leftMargin = Integer.valueOf(value.replace(Constants.UNIT_DIP, ""));
 				} else if (value.endsWith(Constants.UNIT_DP)) {
-					params.leftMargin = DimensionUtils.convertToDensity(MainActivity.device_config.getDensity(), Integer.valueOf(value.replace(Constants.UNIT_DP, "")));
+					params.leftMargin = Integer.valueOf(value.replace(Constants.UNIT_DP, ""));
 				} else if (value.endsWith(Constants.UNIT_PX)) {
 					params.leftMargin = Integer.valueOf(value.replace(Constants.UNIT_PX, ""));
 				}
@@ -124,9 +122,9 @@ public class MarginLayoutParamsProperties extends LayoutParamsProperties {
 			MarginLayoutParams params = (MarginLayoutParams) view.getLayoutParams();
 			try {
 				if (value.endsWith(Constants.UNIT_DIP)) {
-					params.bottomMargin = DimensionUtils.convertToDensity(MainActivity.device_config.getDensity(), Integer.valueOf(value.replace(Constants.UNIT_DIP, "")));
+					params.bottomMargin = Integer.valueOf(value.replace(Constants.UNIT_DIP, ""));
 				} else if (value.endsWith(Constants.UNIT_DP)) {
-					params.bottomMargin = DimensionUtils.convertToDensity(MainActivity.device_config.getDensity(), Integer.valueOf(value.replace(Constants.UNIT_DP, "")));
+					params.bottomMargin = Integer.valueOf(value.replace(Constants.UNIT_DP, ""));
 				} else if (value.endsWith(Constants.UNIT_PX)) {
 					params.bottomMargin = Integer.valueOf(value.replace(Constants.UNIT_PX, ""));
 				}
@@ -163,9 +161,9 @@ public class MarginLayoutParamsProperties extends LayoutParamsProperties {
 			MarginLayoutParams params = (MarginLayoutParams) view.getLayoutParams();
 			try {
 				if (value.endsWith(Constants.UNIT_DIP)) {
-					params.rightMargin = DimensionUtils.convertToDensity(MainActivity.device_config.getDensity(), Integer.valueOf(value.replace(Constants.UNIT_DIP, "")));
+					params.rightMargin = Integer.valueOf(value.replace(Constants.UNIT_DIP, ""));
 				} else if (value.endsWith(Constants.UNIT_DP)) {
-					params.rightMargin = DimensionUtils.convertToDensity(MainActivity.device_config.getDensity(), Integer.valueOf(value.replace(Constants.UNIT_DP, "")));
+					params.rightMargin = Integer.valueOf(value.replace(Constants.UNIT_DP, ""));
 				} else if (value.endsWith(Constants.UNIT_PX)) {
 					params.rightMargin = Integer.valueOf(value.replace(Constants.UNIT_PX, ""));
 				}

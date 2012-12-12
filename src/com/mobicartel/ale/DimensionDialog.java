@@ -1,15 +1,17 @@
 package com.mobicartel.ale;
 
-import android.app.Activity;
-import android.content.Intent;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class DimensionActivity extends Activity implements OnClickListener {
-	
+import com.mobicartel.ale.object.Component;
+import com.mobicartel.ale.properties.XmlSerializableProperty;
+
+public class DimensionDialog extends BasePropertyEditDialog implements OnClickListener {
+
 	private static final int DIMENSION_DP = 0;
 	private static final int DIMENSION_PX = 1;
 	
@@ -27,10 +29,17 @@ public class DimensionActivity extends Activity implements OnClickListener {
 	private Button btn_dp;
 	private Button btn_px;
 	private Button btn_done;
+	private Button btn_match_parent;
+	private Button btn_wrap_content;
 	private TextView txt_size;
 	private TextView txt_dimension;
 	
 	private String size = "";
+	
+	public DimensionDialog(Context context, XmlSerializableProperty property, Component component) {
+		super(context, property, component);
+		
+	}
 	
 	@Override
 	public void onCreate(Bundle state) {
@@ -71,6 +80,10 @@ public class DimensionActivity extends Activity implements OnClickListener {
 		btn_px.setOnClickListener(this);
 		btn_done = (Button) findViewById(R.id.btn_done);
 		btn_done.setOnClickListener(this);
+		btn_match_parent = (Button) findViewById(R.id.btn_match_parent);
+		btn_match_parent.setOnClickListener(this);
+		btn_wrap_content = (Button) findViewById(R.id.btn_wrap_content);
+		btn_wrap_content.setOnClickListener(this);
 		txt_size = (TextView) findViewById(R.id.txt_size);
 		txt_dimension = (TextView) findViewById(R.id.txt_dimension);
 		
@@ -144,10 +157,16 @@ public class DimensionActivity extends Activity implements OnClickListener {
 			changeDimension(DIMENSION_PX);
 			break;
 		case R.id.btn_done:
-			Intent intent = new Intent();
-			intent.putExtra("SIZE", size + txt_dimension.getText());
-			setResult(Activity.RESULT_OK, intent);
-			finish();
+			setPropertyValue(size + txt_dimension.getText());
+			this.dismiss();
+			break;
+		case R.id.btn_match_parent:
+			setPropertyValue("match_parent");
+			this.dismiss();
+			break;
+		case R.id.btn_wrap_content:
+			setPropertyValue("wrap_content");
+			this.dismiss();
 			break;
 		}
 		

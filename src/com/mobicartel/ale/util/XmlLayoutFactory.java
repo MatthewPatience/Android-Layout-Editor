@@ -11,8 +11,8 @@ import android.util.Xml;
 
 import com.mobicartel.ale.object.Component;
 import com.mobicartel.ale.properties.XmlSerializableProperty;
+import com.mobicartel.ale.properties.params.LayoutParamsProperties;
 import com.mobicartel.ale.properties.view.ViewProperties;
-import com.mobicartel.ale.properties.viewgroup.LayoutParamsProperties;
 
 public class XmlLayoutFactory {
 	
