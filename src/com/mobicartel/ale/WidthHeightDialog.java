@@ -44,7 +44,7 @@ public class WidthHeightDialog extends BasePropertyEditDialog implements OnClick
 	@Override
 	public void onCreate(Bundle state) {
 		super.onCreate(state);
-		setContentView(R.layout.dialog_dimensions);
+		setContentView(R.layout.dialog_widthheight);
 		
 		initUi();
 		

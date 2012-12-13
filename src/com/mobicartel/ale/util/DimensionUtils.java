@@ -4,7 +4,7 @@ public class DimensionUtils {
 	
 	public enum Density {
 		
-		LDPI (0.67f),
+		LDPI (0.75f),
 		MDPI (1.0f),
 		HDPI (1.5f),
 		XHDPI (2.0f);
@@ -18,9 +18,9 @@ public class DimensionUtils {
 		
 	}
 
-	public static int convertToDensity(Density density, int size) {
+	public static int convertToDensity(int density_dpi, int size) {
 		
-		return (int) (size * density.conversion);
+		return (int) (size * density_dpi);
 	}
 	
 }

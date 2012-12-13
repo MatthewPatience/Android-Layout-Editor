@@ -9,7 +9,6 @@ import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,12 +56,15 @@ public class LayoutFragment extends Fragment implements OnDragListener, OnClickL
 	
 	public void setDeviceConfig(final DeviceConfig config) {
 		
-		DisplayMetrics metrics = getActivity().getResources().getDisplayMetrics();
-		float conversion = config.getDensity().conversion - (metrics.density - 1);
-		int new_width = (int) (config.getScreenWidth() / conversion);
-		int new_height = (int) (config.getScreenHeight() / conversion);
+		DisplayMetrics real_metrics = getResources().getDisplayMetrics();
+		DisplayMetrics emulated_metrics = config.getDisplayMetrics();
+		
+		float conversion = emulated_metrics.density / real_metrics.density;
+		int new_width = (int) (emulated_metrics.widthPixels / conversion);
+		int new_height = (int) (emulated_metrics.heightPixels / conversion);
 		layout_bg.getLayoutParams().width = new_width;
 		layout_bg.getLayoutParams().height = new_height;
+		layout_bg.requestLayout();
 		layout_bg.invalidate();
 		
 	}
@@ -137,7 +139,7 @@ public class LayoutFragment extends Fragment implements OnDragListener, OnClickL
 		
 		String str_view_type = event.getClipData().getItemAt(0).getText().toString();
 		ViewType view_type = ViewType.getViewType(str_view_type);
-		child = view_type.getComponent(getActivity());
+		child = view_type.getComponent(getActivity(), true);
 		child.getView().setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View view) {

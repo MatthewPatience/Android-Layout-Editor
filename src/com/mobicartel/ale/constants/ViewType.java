@@ -3,6 +3,7 @@ package com.mobicartel.ale.constants;
 import java.lang.reflect.InvocationTargetException;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -19,6 +20,7 @@ import com.mobicartel.ale.properties.view.ProgressBarProperties;
 import com.mobicartel.ale.properties.view.TextViewProperties;
 import com.mobicartel.ale.properties.view.ToggleButtonProperties;
 import com.mobicartel.ale.properties.view.ViewProperties;
+import com.mobicartel.ale.util.Constants;
 import com.mobicartel.ale.util.DefaultComponentCreator;
 
 public enum ViewType {
@@ -58,21 +60,30 @@ public enum ViewType {
 		return null;
 	}
 	
-	public Component getComponent(Context context) throws IllegalArgumentException, SecurityException, InstantiationException, IllegalAccessException, InvocationTargetException, ClassNotFoundException {
+	public Component getComponent(Context context, boolean scaled) throws IllegalArgumentException, SecurityException, InstantiationException, IllegalAccessException, InvocationTargetException, ClassNotFoundException {
+		
+		if (scaled) {
+			Resources.getSystem().updateConfiguration(Resources.getSystem().getConfiguration(), Constants.device_config.getDisplayMetrics()); 
+		}
 		
 		Component component = null;
 		
 		if (view == ToggleButton.class) {
-			component = DefaultComponentCreator.createToggleButtonComponent(context);
+			component = DefaultComponentCreator.createToggleButtonComponent(context, scaled);
 		} else if (view == Button.class) {
-			component = DefaultComponentCreator.createButtonComponent(context);
+			component = DefaultComponentCreator.createButtonComponent(context, scaled);
 		} else if (view == TextView.class) {
-			component = DefaultComponentCreator.createTextViewComponent(context);
+			component = DefaultComponentCreator.createTextViewComponent(context, scaled);
 		} else if (view == ProgressBar.class) {
-			component = DefaultComponentCreator.createProgressBarComponent(context);
+			component = DefaultComponentCreator.createProgressBarComponent(context, scaled);
 		} else {
 			component = new Component((View) Class.forName(((Class<View>) view).getName()).getDeclaredConstructors()[0].newInstance(context));
 		}
+		
+		if (scaled) {
+			Resources.getSystem().getDisplayMetrics().setToDefaults();
+			Resources.getSystem().updateConfiguration(Resources.getSystem().getConfiguration(), Resources.getSystem().getDisplayMetrics()); 
+		} 
 		
 		return component;
 	}

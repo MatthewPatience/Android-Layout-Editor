@@ -70,7 +70,7 @@ public class InventoryAdapter extends BaseAdapter {
 		
 		try {
 			final ViewType view_type = list_views.get(position);
-			final View view = view_type.getComponent(context).getView();
+			final View view = view_type.getComponent(context, false).getView();
 			view.setOnLongClickListener(new OnLongClickListener() {
 				@Override
 				public boolean onLongClick(View view) {
