@@ -16,6 +16,7 @@ import com.mobicartel.ale.object.Component;
 import com.mobicartel.ale.object.HeaderListCollection;
 import com.mobicartel.ale.properties.XmlSerializableProperty;
 import com.mobicartel.ale.util.InputMethod;
+import android.content.*;
 
 public class PropertiesAdapter extends AbsHeaderListAdapter {
 	
@@ -41,6 +42,9 @@ public class PropertiesAdapter extends AbsHeaderListAdapter {
 		
 		TextView txt_name = (TextView) view.findViewById(R.id.txt_name);
 		txt_name.setText(property.getName());
+		
+		TextView txt_value = (TextView) view.findViewById(R.id.txt_value);
+		txt_value.setText(property.getValue());
 		
 		Button btn_edit = (Button) view.findViewById(R.id.btn_edit);
 		btn_edit.setOnClickListener(new OnClickListener() {
@@ -83,6 +87,12 @@ public class PropertiesAdapter extends AbsHeaderListAdapter {
 			BasePropertyEditDialog dialog = input.clazz.getConstructor(Context.class, XmlSerializableProperty.class, Component.class)
 					.newInstance(context, property, component);
 			dialog.show();
+			dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+				@Override
+				public void onDismiss(DialogInterface dialog) {
+					PropertiesAdapter.this.notifyDataSetChanged();
+				}
+			});
 		} catch (Exception e) {
 			e.printStackTrace();
 			Toast.makeText(context, "An error occured while trying to open the editor, please let the developer know", Toast.LENGTH_LONG).show();

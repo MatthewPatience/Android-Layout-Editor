@@ -15,6 +15,15 @@
         android:layout_weight="1"
         android:text="Property"
         android:textSize="18sp" />
+		
+	<TextView
+		android:id="@+id/txt_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:text="Value"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/btn_edit"

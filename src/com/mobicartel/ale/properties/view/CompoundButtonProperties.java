@@ -52,7 +52,7 @@ public class CompoundButtonProperties extends ViewProperties {
 		@Override
 		public InputMethod getInputMethod() {
 			
-			return null;
+			return InputMethod.BOOLEAN;
 		}
 	}
 	
