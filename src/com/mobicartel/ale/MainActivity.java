@@ -39,7 +39,6 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
 	public Component component;
 	
 	private Spinner spinner_devices;
-	private EditText txtbox_filename;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,14 +62,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
     	ActionBar.LayoutParams customview_params = new ActionBar.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
     	customview_params.leftMargin = 30;
     	
-    	txtbox_filename = new EditText(this);
-    	txtbox_filename.setHint("File Name...");
-    	txtbox_filename.setLines(1);
-    	LinearLayout.LayoutParams filename_params = new LinearLayout.LayoutParams(300, LayoutParams.WRAP_CONTENT);
-    	filename_params.leftMargin = 20;
-    	
     	layout_bg.addView(spinner_devices);
-    	layout_bg.addView(txtbox_filename, filename_params);
     	
     	ActionBar actionbar = getActionBar();
     	actionbar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_SHOW_HOME);
